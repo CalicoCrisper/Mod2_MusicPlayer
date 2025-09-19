@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+ background-image: url("/Mod2_MusicPlayer/images/PinkCheck.jpg");
+ background-size: cover;
+  font-family: 'Chewy', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:  #bb4a70;
+}
+
+hr {
+  width: 200px;
+  height: 5px;
+  top: 367px;
+  right: 710px;
+ position: fixed;
+  border-color: #bb4a70;
+  background-color: #bb4a70;
+}
+
+
+h1 {
+  position: fixed;
+top: 300px;
+  margin-left: 300px;
+}
+
+
+.music-container {
+  background: #bb4a70;
+  color: white;
+  border-radius: 150px;
+  box-shadow: 0 20px 20px rgba(110, 39, 45, 0.6);
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  position: fixed;
+}
+
+
+.img-container {
+  width: 300px;
+  position: relative;
+}
+
+.img-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-style: solid;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.music-info {
+  background: rgb(94, 28, 53);
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 10px 10px 10px 150px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(90%);
+}
+
+.progress-container {
+  background: #fff;
+  height: 40px;
+  width: 95%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.progress {
+  background: #fe8daa;
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.1s linear;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+background: #bb4a70;
+  border: none;
+  color: #dbd1a4;
+  font-size: 25px;
+  padding: 10px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.action-btn-big {
+  font-size: 45px;
+  color: #fdf5d1;
+}
+
+/* STYLES BUTTON OF BUDDY */
+.buddy, .hidekirby {
+ transform: translateY(100%);
+ padding: 20px;
+ width: 200px;
+ font-family: 'Chewy', sans-serif;
+  position: fixed;
+  bottom: 180px;
+  border: none;
+  background-color: #bb4a70;
+  color: #fff;
+border-radius: 50px;
+}
+
+.hideKirby {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+}
